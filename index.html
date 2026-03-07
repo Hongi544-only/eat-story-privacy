@@ -577,8 +577,8 @@
                     style="background:rgba(124,58,237,0.06); border:1px solid var(--border); border-radius:14px; padding:20px 24px; margin-bottom:32px;">
                     <h4 style="color:var(--primary-light); margin-bottom:4px; font-size:1rem;">💰 실제 사용 패턴 기준 월 비용 시뮬레이션
                     </h4>
-                    <p style="color:var(--muted); font-size:0.82rem; margin-bottom:14px;">기준: 하루 3끼+간식 분석(4회) · 일일
-                        리포트(2회) · 주간 리포트 월 8회 · 월간 리포트 2회 · 스토리 생성(2회) = 월 약 250회 구동</p>
+                    <p style="color:var(--muted); font-size:0.88rem; margin-bottom:6px;">유료 전환 시에도 상상하는 수준의 비용이 아닙니다. Gemini API는 사용한 <strong>토큰 수만큼만 요금 계산</strong>(종량과금, 기본료 없음)되며, 식단 분석에 쓰이는 양은 매우 적습니다.</p>
+                    <p style="color:var(--muted); font-size:0.78rem; margin-bottom:14px; opacity:0.8;">기준: 하루 3끼+간식 분석(4회) · 일일 리포트(2회) · 주간 리포트 월 8회 · 월간 리포트 2회 · 스토리 생성(<strong>일 2회, 월 60회</strong>) = 월 약 <strong>250회</strong></p>
                     <div style="overflow-x:auto;">
                         <table style="width:100%; border-collapse:collapse; font-size:0.85rem; min-width:400px;">
                             <thead>
@@ -771,54 +771,7 @@
                     </p>
                 </div>
 
-                <div
-                    style="background:rgba(124,58,237,0.08); border:1px solid var(--primary); border-radius:12px; padding:18px 20px; margin-top:16px;">
-                    <h4 style="color:var(--primary-light); margin-bottom:10px; font-size:0.95rem">유료 플랜 전환 시 비용은 얼마나
-                        나오나요?
-                    </h4>
-                    <p style="color:var(--muted); font-size:0.88rem; margin-bottom:12px;">유료 전환 시에도 상상하는 수준의 비용이 아닙니다.
-                        Gemini API는 사용한 <strong>토큰 수만큼만 요금 계산</strong>(종량과금, 기본료 없음)되며, 식단 분석에 쓰이는 양은 매우 적습니다.</p>
-                    <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
-                        <thead>
-                            <tr style="background:rgba(124,58,237,0.15);">
-                                <th
-                                    style="padding:8px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
-                                    사용 패턴</th>
-                                <th
-                                    style="padding:8px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
-                                    월 예상비용</th>
-                                <th
-                                    style="padding:8px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
-                                    원화 환산</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="padding:8px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
-                                    하루 1~2회 (가볍게 이용)</td>
-                                <td style="padding:8px 12px; color:#4ade80; border-bottom:1px solid var(--border)">~
-                                    $0.02</td>
-                                <td style="padding:8px 12px; color:#4ade80; border-bottom:1px solid var(--border)">약 28원
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:8px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
-                                    하루 3끼 + AI 리포트 (일반 이용)</td>
-                                <td style="padding:8px 12px; color:#4ade80; border-bottom:1px solid var(--border)">~
-                                    $0.05~0.15</td>
-                                <td style="padding:8px 12px; color:#4ade80; border-bottom:1px solid var(--border)">약
-                                    70~210원</td>
-                            </tr>
-                            <tr>
-                                <td style="padding:8px 12px; color:var(--muted)">주/월 리포트 포함 (적극 이용)</td>
-                                <td style="padding:8px 12px; color:#fbbf24">~ $0.20~0.50</td>
-                                <td style="padding:8px 12px; color:#fbbf24">약 280~700원</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p style="color:var(--muted); font-size:0.78rem; margin-top:10px; opacity:0.7">※ Gemini 2.5
-                        Flash-Lite 모델 기준 (구매력 1,400원). 실제 비용은 모델 선택 및 이용량에 따라 다를 수 있습니다.</p>
-                </div>
+
             </div>
         </section>
 
@@ -1117,57 +1070,7 @@
                             day</strong>. For heavier usage, switch to a paid plan or add keys for OpenAI or Claude.</p>
                 </div>
 
-                <div
-                    style="background:rgba(124,58,237,0.08); border:1px solid var(--primary); border-radius:12px; padding:18px 20px; margin-top:16px;">
-                    <h4 style="color:var(--primary-light); margin-bottom:10px; font-size:0.95rem">💰 How much does paid
-                        API actually cost?</h4>
-                    <p style="color:var(--muted); font-size:0.88rem; margin-bottom:12px;">Less than you'd expect. Gemini
-                        API is billed by <strong>tokens used only</strong> (no subscription fee), and meal analysis
-                        consumes very few tokens.</p>
-                    <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
-                        <thead>
-                            <tr style="background:rgba(124,58,237,0.15);">
-                                <th
-                                    style="padding:8px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
-                                    Usage Pattern</th>
-                                <th
-                                    style="padding:8px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
-                                    Est. Monthly Cost</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="padding:8px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
-                                    1–2 analyses/day (light use)</td>
-                                <td style="padding:8px 12px; color:#4ade80; border-bottom:1px solid var(--border)">~
-                                    <strong>$0.02</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:8px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
-                                    3 meals/day + AI reports (typical)</td>
-                                <td style="padding:8px 12px; color:#4ade80; border-bottom:1px solid var(--border)">~
-                                    <strong>$0.05–0.15</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:8px 12px; color:var(--muted)">+ weekly &amp; monthly reports (heavy
-                                    use)</td>
-                                <td style="padding:8px 12px; color:#fbbf24">~ <strong>$0.20–0.50</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p style="color:var(--muted); font-size:0.78rem; margin-top:10px; opacity:0.7">※ Based on Gemini 2.5
-                        Flash-Lite pricing. Actual cost varies by model and usage.</p>
-                    <div
-                        style="margin-top:12px; padding:8px 14px; background:rgba(124,58,237,0.12); border-radius:8px; display:inline-flex; align-items:center; gap:8px;">
-                        <span
-                            style="background:var(--primary); color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:999px;">COMING
-                            SOON</span>
-                        <span style="color:var(--primary-light); font-size:0.82rem;"><strong>Premium model
-                                selection</strong> for paid API users &mdash; coming in a future update</span>
-                    </div>
-                </div>
+
             </div>
         </section>
 
