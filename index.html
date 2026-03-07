@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>잇-Story / Eat-Story — AI 식단 기록 앱</title>
+    <meta name="description" content="사진 한 장으로 칼로리를 분석하고, 나만의 식단 스토리를 만드는 AI 헬스 앱. 모든 데이터는 기기 내 안전하게 보관됩니다." />
+    <style>
+        :root {
+            --primary: #7C3AED;
+            --primary-light: #a78bfa;
+            --primary-dark: #5b21b6;
+            --bg: #0f0a1e;
+            --card: #1a1030;
+            --card2: #231540;
+            --text: #f0eeff;
+            --muted: #a89cc8;
+            --border: #2d1f5e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* NAV */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 10, 30, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+        }
+
+        .nav-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        /* LANG TOGGLE */
+        .lang-toggle {
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            padding: 5px 14px;
+            border-radius: 999px;
+            border: 1.5px solid var(--primary);
+            background: transparent;
+            color: var(--primary-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* CONTENT SWITCH */
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 80px 24px 60px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.3) 0%, transparent 70%);
+        }
+
+        .hero-emoji {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary-light);
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin: 16px auto;
+            max-width: 520px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            border: 2px solid var(--primary);
+            color: var(--primary-light);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(124, 58, 237, 0.1);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(124, 58, 237, 0.2);
+            color: var(--primary-light);
+            border: 1px solid var(--primary);
+            border-radius: 999px;
+            padding: 4px 14px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* SECTION COMMON */
+        section {
+            padding: 60px 24px;
+        }
+
+        .section-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .section-title span {
+            color: var(--primary-light);
+        }
+
+        .section-desc {
+            color: var(--muted);
+            margin-bottom: 40px;
+        }
+
+        /* FEATURES GRID */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .feature-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        /* API GUIDE */
+        .api-section {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .why-box {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+        }
+
+        .why-box h3 {
+            color: var(--primary-light);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .why-box p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* AI SERVICE TABLE */
+        .ai-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+        }
+
+        .ai-table th {
+            background: rgba(124, 58, 237, 0.15);
+            color: var(--primary-light);
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ai-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--muted);
+        }
+
+        .ai-table tr:hover td {
+            background: rgba(124, 58, 237, 0.05);
+        }
+
+        .badge-free {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            border: 1px solid #166534;
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+        }
+
+        .badge-rec {
+            background: rgba(124, 58, 237, 0.2);
+            color: var(--primary-light);
+            border: 1px solid var(--primary);
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+        }
+
+        /* STEPS */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .step {
+            display: flex;
+            gap: 16px;
+            background: var(--card2);
+            border-radius: 14px;
+            padding: 18px 20px;
+            border: 1px solid var(--border);
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-body h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .step-body p {
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .step-tip {
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: rgba(124, 58, 237, 0.08);
+            border-left: 3px solid var(--primary);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.82rem;
+            color: var(--primary-light);
+        }
+
+        /* WARNING BOX */
+        .warning-box {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-top: 32px;
+        }
+
+        .warning-box h4 {
+            color: #fbbf24;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .warning-box p {
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        .warning-box ul {
+            padding-left: 18px;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .warning-box li {
+            margin-bottom: 4px;
+        }
+
+        .smart-routing-box {
+            background: rgba(34, 197, 94, 0.06);
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-top: 16px;
+        }
+
+        .smart-routing-box h4 {
+            color: #4ade80;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .smart-routing-box p {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.82rem;
+            padding: 32px 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 16px 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <span class="nav-logo">🍽️ 잇-Story</span>
+        <div style="display:flex; gap:20px; align-items:center;">
+            <div class="nav-links">
+                <a href="#features" id="nav-features">기능 소개</a>
+                <a href="#api-guide" id="nav-guide">API 가이드</a>
+                <a href="privacy-policy.html" id="nav-privacy">개인정보처리방침</a>
+            </div>
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="setLang('ko')">한국어</button>
+                <button class="lang-btn" onclick="setLang('en')">English</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== 한국어 ==================== -->
+    <div id="ko" class="content active">
+
+        <!-- HERO -->
+        <section class="hero">
+            <span class="hero-emoji">🍽️</span>
+            <div class="badge">AI 식단 헬스 앱</div>
+            <h1>먹고, 찍고, 기록하고<br /><span>매일이 하나의 Story</span></h1>
+            <p>사진 한 장으로 칼로리와 영양을 즉시 분석하고,<br />나만의 식단 스토리를 AI가 글로 써드립니다.<br />모든 데이터는 <strong>내 기기에만</strong> 안전하게
+                보관됩니다.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">🍎 App Store 다운로드</a>
+                <a href="#" class="btn-outline">🤖 Google Play 다운로드</a>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section id="features">
+            <div class="section-inner">
+                <div class="section-title">✨ 주요 <span>기능</span></div>
+                <p class="section-desc">잇-Story와 함께 더 건강하고 특별한 식단 여정을 시작하세요.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📸</div>
+                        <h3>AI 식단 분석</h3>
+                        <p>음식 사진 한 장을 찍으면 칼로리, 탄수화물, 단백질, 지방, 나트륨을 즉시 분석합니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📖</div>
+                        <h3>나만의 잇-Story</h3>
+                        <p>오늘 먹은 한 끼가 일기, 소설, 또는 시로 탄생합니다. 매월 랜덤 장르의 연재 소설 기능 지원.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>완전한 프라이버시</h3>
+                        <p>모든 식단 기록, 사진, 개인 정보는 별도 서버 없이 내 기기에만 암호화 저장됩니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>AI 영양 리포트</h3>
+                        <p>일간·주간·월간 식단 데이터로 맞춤형 영양 분석 리포트를 생성합니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚖️</div>
+                        <h3>건강 트래커</h3>
+                        <p>체중, 수분 섭취, 공복 시간, 금주 여부를 홈 화면에서 한눈에 추적합니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>Smart AI Routing</h3>
+                        <p>Gemini, OpenAI, Claude 중 최적의 AI를 자동 선택하여 응답 속도와 안정성을 극대화합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API GUIDE -->
+        <section class="api-section" id="api-guide">
+            <div class="section-inner">
+                <div class="section-title">🔑 API Key <span>등록 가이드</span></div>
+                <p class="section-desc">잇-Story는 사용자가 직접 발급한 AI API 키로 분석을 수행합니다. 앱이 개인 데이터를 수집하지 않는 이유입니다.</p>
+
+                <div class="why-box">
+                    <h3>💡 왜 API 키가 필요한가요?</h3>
+                    <p>잇-Story는 AI 분석 서비스를 위해 별도의 서버를 운영하지 않습니다. 대신, 사용자가 직접 Google, OpenAI, Anthropic에서 발급받은 API 키를 기기
+                        내에 암호화 저장하여 AI 서비스를 직접 호출합니다. 이를 통해 <strong>개인 식단 데이터가 외부로 전송되지 않도록</strong> 설계되어 있습니다.</p>
+                </div>
+
+                <h3 style="margin-bottom:16px; font-size:1.1rem;">📋 지원 AI 서비스 비교</h3>
+                <table class="ai-table">
+                    <thead>
+                        <tr>
+                            <th>AI 서비스</th>
+                            <th>특징</th>
+                            <th>무료 여부</th>
+                            <th>추천 여부</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Google Gemini</strong></td>
+                            <td>구글 계정만 있으면 즉시 발급, 사진 분석 최적화</td>
+                            <td><span class="badge-free">무료 가능</span></td>
+                            <td><span class="badge-rec">⭐ 추천</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>OpenAI (GPT-4o)</strong></td>
+                            <td>고성능 텍스트 생성, 유료 사용</td>
+                            <td>유료</td>
+                            <td>선택</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anthropic (Claude)</strong></td>
+                            <td>Haiku 모델, 지능형 분석</td>
+                            <td>유료</td>
+                            <td>선택</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="margin-bottom:16px; font-size:1.1rem;">📱 Google Gemini API 키 등록 9단계</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h4>Google AI Studio 접속</h4>
+                            <p><a href="https://aistudio.google.com" target="_blank"
+                                    style="color:var(--primary-light)">aistudio.google.com</a>에 접속하여 Google 계정으로 로그인합니다.
+                                좌측 상단의 ☰ 메뉴 버튼을 탭합니다.</p>
+                            <div class="step-tip">💡 Google 계정이 필요합니다. 없으시면 먼저 가입하세요.</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h4>Get API key 메뉴 선택</h4>
+                            <p>사이드 메뉴 하단에 있는 "Get API key" 메뉴를 탭합니다.</p>
+                            <div class="step-tip">🔑 API 키 관리 페이지로 이동합니다.</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h4>API 키 만들기 버튼 클릭</h4>
+                            <p>API 키 목록 화면에서 우측 상단의 "API 키 만들기" 버튼을 탭합니다.</p>
+                            <div class="step-tip">📋 이미 키가 있다면 기존 키를 사용하셔도 좋습니다.</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">4</div>
+                        <div class="step-body">
+                            <h4>키 이름 입력</h4>
+                            <p>"새 키 만들기" 팝업에서 이름을 입력(예: eatstory)한 후 "키 만들기"를 탭합니다.</p>
+                            <div class="step-tip">✏️ 키 이름은 나중에 구분하기 위한 것으로 자유롭게 입력하세요.</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">5</div>
+                        <div class="step-body">
+                            <h4>API 키 생성 확인</h4>
+                            <p>키가 성공적으로 생성되었습니다! 목록에서 방금 만든 키를 탭하여 세부정보를 확인합니다.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">6</div>
+                        <div class="step-body">
+                            <h4>API 키 복사</h4>
+                            <p>API 키 값 옆의 📋 복사 버튼을 탭하여 키를 클립보드에 복사합니다.</p>
+                            <div class="step-tip">⚠️ API 키는 비밀번호처럼 소중히 다뤄주세요! 타인에게 공유하지 마세요.</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">7</div>
+                        <div class="step-body">
+                            <h4>잇-Story 앱 실행</h4>
+                            <p>잇-Story 앱을 실행합니다. 메인 화면이 나타나면 하단 네비게이션에서 "설정" 탭으로 이동합니다.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">8</div>
+                        <div class="step-body">
+                            <h4>기능 설정 탭 선택</h4>
+                            <p>설정 페이지 상단의 "기능 설정" 탭을 선택합니다.</p>
+                            <div class="step-tip">⚙️ 기능 설정 탭에서 AI 서비스를 관리할 수 있습니다.</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">9</div>
+                        <div class="step-body">
+                            <h4>API 키 입력 및 저장</h4>
+                            <p>"지능형 AI 관리 서비스" 섹션에서 Google Gemini 항목의 API 키 입력란에 복사한 키를 붙여넣고 "저장" 버튼을 탭합니다.</p>
+                            <div class="step-tip">🎉 "인증 완료"가 표시되면 설정 완료! 이제 AI 식단 분석을 바로 사용할 수 있습니다.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box" style="margin-top:32px;">
+                    <h4>⚠️ 무료 API 사용 제한 안내</h4>
+                    <p>Gemini 무료(Free Tier) 버전은 API 키 단위가 아닌 <strong>프로젝트 단위</strong>로 제한이 적용됩니다.</p>
+                    <ul style="margin-top:10px;">
+                        <li>모델별 하루 약 <strong>20~50회</strong> 요청 가능 (구글 정책에 따라 변동)</li>
+                        <li>2025년 12월 이후 무료 한도가 대폭 축소된 상태</li>
+                        <li>한도 초과 시 분석 지연 또는 오류 발생 가능</li>
+                    </ul>
+                </div>
+
+                <div class="smart-routing-box">
+                    <h4>✅ Smart Routing으로 한도 극복</h4>
+                    <p>잇-Story는 <strong>3가지 Gemini 모델(1.5 / 2.5 / 2.5 Lite)을 자동 전환</strong>하여 하루 실질 사용 가능 횟수를 최대
+                        <strong>약 60~150회</strong>까지 확장합니다. 더 많은 분석이 필요하다면 유료 플랜으로 전환하시거나, OpenAI·Claude API 키를 추가로
+                        등록하세요.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Wongi Hong · 잇-Story / Eat-Story</p>
+            <p style="margin-top:8px;">
+                <a href="privacy-policy.html">개인정보처리방침</a> &nbsp;|&nbsp;
+                <a href="mailto:Hongi544@outlook.com">문의: Hongi544@outlook.com</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- ==================== ENGLISH ==================== -->
+    <div id="en" class="content">
+
+        <section class="hero">
+            <span class="hero-emoji">🍽️</span>
+            <div class="badge">AI Health App</div>
+            <h1>Eat, Snap, Record<br /><span>Every Meal, Your Story</span></h1>
+            <p>Analyze calories and nutrition instantly from a single photo,<br />and let AI turn your meals into a
+                unique personal story.<br />All data stays <strong>only on your device</strong>.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">🍎 Download on App Store</a>
+                <a href="#" class="btn-outline">🤖 Get it on Google Play</a>
+            </div>
+        </section>
+
+        <section id="features-en">
+            <div class="section-inner">
+                <div class="section-title">✨ Key <span>Features</span></div>
+                <p class="section-desc">Start a healthier and more meaningful meal journey with Eat-Story.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📸</div>
+                        <h3>AI Meal Analysis</h3>
+                        <p>Take a photo of your food and instantly get calories, carbs, protein, fat, and sodium
+                            breakdowns.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📖</div>
+                        <h3>Your Eat-Story</h3>
+                        <p>Each meal becomes a diary entry, serialized novel, or poem. Monthly themed story series
+                            supported.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Complete Privacy</h3>
+                        <p>All meal records, photos, and personal data are encrypted and stored only on your device — no
+                            external server.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>AI Nutrition Reports</h3>
+                        <p>Generate daily, weekly, and monthly personalized nutrition analysis reports from your meal
+                            data.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚖️</div>
+                        <h3>Health Trackers</h3>
+                        <p>Track weight, hydration, fasting duration, and alcohol-free days in one home screen view.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>Smart AI Routing</h3>
+                        <p>Automatically selects the best available AI among Gemini, OpenAI, and Claude for speed and
+                            reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="api-section" id="api-guide-en">
+            <div class="section-inner">
+                <div class="section-title">🔑 API Key <span>Registration Guide</span></div>
+                <p class="section-desc">Eat-Story uses AI API keys that you generate yourself — that's how your data
+                    stays private.</p>
+
+                <div class="why-box">
+                    <h3>💡 Why do I need an API key?</h3>
+                    <p>Eat-Story does not operate its own servers for AI analysis. Instead, your API keys (issued
+                        directly by Google, OpenAI, or Anthropic) are encrypted and stored on your device, and AI
+                        services are called directly from your device. This ensures <strong>your personal meal data
+                            never leaves your device</strong>.</p>
+                </div>
+
+                <h3 style="margin-bottom:16px; font-size:1.1rem;">📋 Supported AI Services</h3>
+                <table class="ai-table">
+                    <thead>
+                        <tr>
+                            <th>AI Service</th>
+                            <th>Notes</th>
+                            <th>Free?</th>
+                            <th>Recommendation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Google Gemini</strong></td>
+                            <td>Instant key issuance with Google account, optimized for photo analysis</td>
+                            <td><span class="badge-free">Free available</span></td>
+                            <td><span class="badge-rec">⭐ Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>OpenAI (GPT-4o)</strong></td>
+                            <td>High-performance text generation</td>
+                            <td>Paid</td>
+                            <td>Optional</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anthropic (Claude)</strong></td>
+                            <td>Haiku model, intelligent analysis</td>
+                            <td>Paid</td>
+                            <td>Optional</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="margin-bottom:16px; font-size:1.1rem;">📱 Google Gemini API Key — 9 Steps</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h4>Go to Google AI Studio</h4>
+                            <p>Visit <a href="https://aistudio.google.com" target="_blank"
+                                    style="color:var(--primary-light)">aistudio.google.com</a> and sign in with your
+                                Google account. Tap the ☰ menu button at the top-left.</p>
+                            <div class="step-tip">💡 A Google account is required.</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h4>Select "Get API key"</h4>
+                            <p>Tap "Get API key" from the sidebar menu.</p>
+                            <div class="step-tip">🔑 This takes you to the API key management page.</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h4>Create API Key</h4>
+                            <p>Tap "Create API key" in the top-right area of the key list.</p>
+                            <div class="step-tip">📋 If you already have a key, you can reuse it.</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">4</div>
+                        <div class="step-body">
+                            <h4>Enter a key name</h4>
+                            <p>In the popup, enter a name (e.g., "eatstory") and tap "Create key".</p>
+                            <div class="step-tip">✏️ The name is just for your reference — use anything.</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">5</div>
+                        <div class="step-body">
+                            <h4>Confirm key created</h4>
+                            <p>Your key has been created! Tap the new key in the list to see its details.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">6</div>
+                        <div class="step-body">
+                            <h4>Copy the API key</h4>
+                            <p>Tap the 📋 copy button next to the API key value.</p>
+                            <div class="step-tip">⚠️ Treat your API key like a password — never share it!</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">7</div>
+                        <div class="step-body">
+                            <h4>Open Eat-Story app</h4>
+                            <p>Launch the Eat-Story app. From the main screen, tap "Settings" in the bottom navigation.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">8</div>
+                        <div class="step-body">
+                            <h4>Go to Feature Settings tab</h4>
+                            <p>Select the "Feature Settings" tab at the top of the Settings page.</p>
+                            <div class="step-tip">⚙️ AI services are managed in this tab.</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">9</div>
+                        <div class="step-body">
+                            <h4>Paste and save the API key</h4>
+                            <p>In the "AI Management" section, paste your key into the Google Gemini field and tap
+                                "Save".</p>
+                            <div class="step-tip">🎉 When "Verified" appears, you're all set! AI meal analysis is ready
+                                to use.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box" style="margin-top:32px;">
+                    <h4>⚠️ Free API Usage Limits</h4>
+                    <p>Gemini Free Tier limits apply <strong>per project</strong>, not per API key.</p>
+                    <ul style="margin-top:10px;">
+                        <li>Approximately <strong>20–50 requests per day per model</strong> (varies by Google policy)
+                        </li>
+                        <li>Free tier quotas were significantly reduced after December 2025</li>
+                        <li>Exceeding the limit may cause analysis delays or errors</li>
+                    </ul>
+                </div>
+
+                <div class="smart-routing-box">
+                    <h4>✅ Overcome Limits with Smart Routing</h4>
+                    <p>Eat-Story <strong>automatically rotates between 3 Gemini models (1.5 / 2.5 / 2.5 Lite)</strong>,
+                        effectively extending your daily usable requests to approximately <strong>60–150 per
+                            day</strong>. For heavier usage, switch to a paid plan or add keys for OpenAI or Claude.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Wongi Hong · 잇-Story / Eat-Story</p>
+            <p style="margin-top:8px;">
+                <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp;
+                <a href="mailto:Hongi544@outlook.com">Contact: Hongi544@outlook.com</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(lang).classList.add('active');
+            event.target.classList.add('active');
+            // Update nav links
+            const isKo = lang === 'ko';
+            document.getElementById('nav-features').textContent = isKo ? '기능 소개' : 'Features';
+            document.getElementById('nav-guide').textContent = isKo ? 'API 가이드' : 'API Guide';
+            document.getElementById('nav-privacy').textContent = isKo ? '개인정보처리방침' : 'Privacy Policy';
+        }
+    </script>
+</body>
+
+</html>
