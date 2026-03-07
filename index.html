@@ -573,6 +573,110 @@
                     </tbody>
                 </table>
 
+                <div
+                    style="background:rgba(124,58,237,0.06); border:1px solid var(--border); border-radius:14px; padding:20px 24px; margin-bottom:32px;">
+                    <h4 style="color:var(--primary-light); margin-bottom:4px; font-size:1rem;">💰 실제 사용 패턴 기준 월 비용 시뮬레이션
+                    </h4>
+                    <p style="color:var(--muted); font-size:0.82rem; margin-bottom:14px;">기준: 하루 3끼+간식 분석(4회) · 일일
+                        리포트(2회) · 주간 리포트 월 8회 · 월간 리포트 2회 · 스토리 생성(2회) = 월 약 250회 구동</p>
+                    <div style="overflow-x:auto;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; min-width:400px;">
+                            <thead>
+                                <tr style="background:rgba(124,58,237,0.15);">
+                                    <th
+                                        style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
+                                        AI 서비스</th>
+                                    <th
+                                        style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
+                                        모델</th>
+                                    <th
+                                        style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
+                                        월 예상 비용</th>
+                                    <th
+                                        style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
+                                        원화 환산</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td
+                                        style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">
+                                        🔵 Google Gemini</td>
+                                    <td
+                                        style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
+                                        2.5 Flash-Lite <span style="font-size:0.75rem; color:#4ade80;">★ 최저가 · 앱
+                                            기본</span></td>
+                                    <td
+                                        style="padding:9px 12px; color:#4ade80; border-bottom:1px solid var(--border); font-weight:700">
+                                        ~ $0.17</td>
+                                    <td style="padding:9px 12px; color:#4ade80; border-bottom:1px solid var(--border)">약
+                                        <strong>238원</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">
+                                        🔵 Google Gemini</td>
+                                    <td
+                                        style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
+                                        2.5 Flash (표준)</td>
+                                    <td
+                                        style="padding:9px 12px; color:#fbbf24; border-bottom:1px solid var(--border); font-weight:700">
+                                        ~ $0.74</td>
+                                    <td style="padding:9px 12px; color:#fbbf24; border-bottom:1px solid var(--border)">약
+                                        <strong>1,036원</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">
+                                        🟠 Anthropic Claude</td>
+                                    <td
+                                        style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
+                                        Haiku 4.5 <span style="font-size:0.75rem; color:#a89cc8;">앱 지원</span></td>
+                                    <td
+                                        style="padding:9px 12px; color:#fbbf24; border-bottom:1px solid var(--border); font-weight:700">
+                                        ~ $1.47</td>
+                                    <td style="padding:9px 12px; color:#fbbf24; border-bottom:1px solid var(--border)">약
+                                        <strong>2,058원</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">
+                                        🟢 OpenAI ChatGPT</td>
+                                    <td
+                                        style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
+                                        GPT-4o <span style="font-size:0.75rem; color:#a89cc8;">앱 지원</span></td>
+                                    <td
+                                        style="padding:9px 12px; color:#4ade80; border-bottom:1px solid var(--border); font-weight:700">
+                                        ~ $4.05</td>
+                                    <td style="padding:9px 12px; color:#4ade80; border-bottom:1px solid var(--border)">약
+                                        <strong>5,670원</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:9px 12px; color:var(--text); font-weight:600">🟢 OpenAI ChatGPT
+                                    </td>
+                                    <td style="padding:9px 12px; color:var(--muted)">GPT-4o (고성능)</td>
+                                    <td style="padding:9px 12px; color:#f87171; font-weight:700">~ $4.05</td>
+                                    <td style="padding:9px 12px; color:#f87171">약 <strong>5,670원</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="color:var(--muted); font-size:0.78rem; margin-top:10px; opacity:0.7">※ 입력 ~82만 토큰 + 출력
+                        ~18만 토큰 기준 추정치. 환율 1,400원 적용. 이미지 처리 요금은 별도 과금될 수 있으며, 실제 비용은 사용 패턴에 따라 다를 수 있습니다.</p>
+                    <div
+                        style="margin-top:12px; padding:8px 14px; background:rgba(124,58,237,0.12); border-radius:8px; display:inline-flex; align-items:center; gap:8px;">
+                        <span
+                            style="background:var(--primary); color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:999px;">COMING
+                            SOON</span>
+                        <span style="color:var(--primary-light); font-size:0.82rem;">유료 API 사용자를 위한 <strong>고성능 상위 모델 선택
+                                기능</strong> 추후 업데이트 예정</span>
+                    </div>
+                </div>
+
                 <h3 style="margin-bottom:16px; font-size:1.1rem;">📱 Google Gemini API 키 등록 9단계</h3>
                 <div class="steps">
                     <div class="step">
@@ -663,7 +767,57 @@
                     <h4>✅ Smart Routing으로 한도 극복</h4>
                     <p>잇-Story는 <strong>3가지 Gemini 모델(1.5 / 2.5 / 2.5 Lite)을 자동 전환</strong>하여 하루 실질 사용 가능 횟수를 최대
                         <strong>약 60~150회</strong>까지 확장합니다. 더 많은 분석이 필요하다면 유료 플랜으로 전환하시거나, OpenAI·Claude API 키를 추가로
-                        등록하세요.</p>
+                        등록하세요.
+                    </p>
+                </div>
+
+                <div
+                    style="background:rgba(124,58,237,0.08); border:1px solid var(--primary); border-radius:12px; padding:18px 20px; margin-top:16px;">
+                    <h4 style="color:var(--primary-light); margin-bottom:10px; font-size:0.95rem">유료 플랜 전환 시 비용은 얼마나
+                        나오나요?
+                    </h4>
+                    <p style="color:var(--muted); font-size:0.88rem; margin-bottom:12px;">유료 전환 시에도 상상하는 수준의 비용이 아닙니다.
+                        Gemini API는 사용한 <strong>토큰 수만큼만 요금 계산</strong>(종량과금, 기본료 없음)되며, 식단 분석에 쓰이는 양은 매우 적습니다.</p>
+                    <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                        <thead>
+                            <tr style="background:rgba(124,58,237,0.15);">
+                                <th
+                                    style="padding:8px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
+                                    사용 패턴</th>
+                                <th
+                                    style="padding:8px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
+                                    월 예상비용</th>
+                                <th
+                                    style="padding:8px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
+                                    원화 환산</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding:8px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
+                                    하루 1~2회 (가볍게 이용)</td>
+                                <td style="padding:8px 12px; color:#4ade80; border-bottom:1px solid var(--border)">~
+                                    $0.02</td>
+                                <td style="padding:8px 12px; color:#4ade80; border-bottom:1px solid var(--border)">약 28원
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
+                                    하루 3끼 + AI 리포트 (일반 이용)</td>
+                                <td style="padding:8px 12px; color:#4ade80; border-bottom:1px solid var(--border)">~
+                                    $0.05~0.15</td>
+                                <td style="padding:8px 12px; color:#4ade80; border-bottom:1px solid var(--border)">약
+                                    70~210원</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 12px; color:var(--muted)">주/월 리포트 포함 (적극 이용)</td>
+                                <td style="padding:8px 12px; color:#fbbf24">~ $0.20~0.50</td>
+                                <td style="padding:8px 12px; color:#fbbf24">약 280~700원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="color:var(--muted); font-size:0.78rem; margin-top:10px; opacity:0.7">※ Gemini 2.5
+                        Flash-Lite 모델 기준 (구매력 1,400원). 실제 비용은 모델 선택 및 이용량에 따라 다를 수 있습니다.</p>
                 </div>
             </div>
         </section>
@@ -782,6 +936,90 @@
                     </tbody>
                 </table>
 
+                <div
+                    style="background:rgba(124,58,237,0.06); border:1px solid var(--border); border-radius:14px; padding:20px 24px; margin-bottom:32px;">
+                    <h4 style="color:var(--primary-light); margin-bottom:4px; font-size:1rem;">💰 Monthly Cost
+                        Simulation (Real Usage Scenario)</h4>
+                    <p style="color:var(--muted); font-size:0.82rem; margin-bottom:14px;">Based on: 4 meal analyses/day
+                        · 2 daily reports/day · 8 weekly reports/month · 2 monthly reports · 2 stories/day = ~250 API
+                        calls/month</p>
+                    <div style="overflow-x:auto;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; min-width:400px;">
+                            <thead>
+                                <tr style="background:rgba(124,58,237,0.15);">
+                                    <th
+                                        style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
+                                        AI Service</th>
+                                    <th
+                                        style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
+                                        Model</th>
+                                    <th
+                                        style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
+                                        Est. Monthly</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td
+                                        style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">
+                                        🔵 Google Gemini</td>
+                                    <td
+                                        style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
+                                        2.5 Flash-Lite <span style="font-size:0.75rem; color:#4ade80;">★ Cheapest · App
+                                            Default</span>
+                                    </td>
+                                    <td
+                                        style="padding:9px 12px; color:#4ade80; border-bottom:1px solid var(--border); font-weight:700">
+                                        ~ <strong>$0.17</strong></td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">
+                                        🔵 Google Gemini</td>
+                                    <td
+                                        style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
+                                        2.5 Flash (standard)</td>
+                                    <td
+                                        style="padding:9px 12px; color:#fbbf24; border-bottom:1px solid var(--border); font-weight:700">
+                                        ~ <strong>$0.74</strong></td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">
+                                        🟠 Anthropic Claude</td>
+                                    <td
+                                        style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
+                                        Haiku 4.5 <span style="font-size:0.75rem; color:#a89cc8;">앱 지원</span></td>
+                                    <td
+                                        style="padding:9px 12px; color:#fbbf24; border-bottom:1px solid var(--border); font-weight:700">
+                                        ~ <strong>$1.47</strong></td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">
+                                        🟢 OpenAI ChatGPT</td>
+                                    <td
+                                        style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
+                                        GPT-4o <span style="font-size:0.75rem; color:#a89cc8;">앱 지원</span></td>
+                                    <td
+                                        style="padding:9px 12px; color:#4ade80; border-bottom:1px solid var(--border); font-weight:700">
+                                        ~ <strong>$0.23</strong></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:9px 12px; color:var(--text); font-weight:600">🟢 OpenAI ChatGPT
+                                    </td>
+                                    <td style="padding:9px 12px; color:var(--muted)">GPT-4o (high-performance)</td>
+                                    <td style="padding:9px 12px; color:#f87171; font-weight:700">~
+                                        <strong>$4.05</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="color:var(--muted); font-size:0.78rem; margin-top:10px; opacity:0.7">※ Estimated based on
+                        ~820K input + ~184K output tokens/month. Actual cost may vary by usage pattern.</p>
+                </div>
+
                 <h3 style="margin-bottom:16px; font-size:1.1rem;">📱 Google Gemini API Key — 9 Steps</h3>
                 <div class="steps">
                     <div class="step">
@@ -877,6 +1115,58 @@
                     <p>Eat-Story <strong>automatically rotates between 3 Gemini models (1.5 / 2.5 / 2.5 Lite)</strong>,
                         effectively extending your daily usable requests to approximately <strong>60–150 per
                             day</strong>. For heavier usage, switch to a paid plan or add keys for OpenAI or Claude.</p>
+                </div>
+
+                <div
+                    style="background:rgba(124,58,237,0.08); border:1px solid var(--primary); border-radius:12px; padding:18px 20px; margin-top:16px;">
+                    <h4 style="color:var(--primary-light); margin-bottom:10px; font-size:0.95rem">💰 How much does paid
+                        API actually cost?</h4>
+                    <p style="color:var(--muted); font-size:0.88rem; margin-bottom:12px;">Less than you'd expect. Gemini
+                        API is billed by <strong>tokens used only</strong> (no subscription fee), and meal analysis
+                        consumes very few tokens.</p>
+                    <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                        <thead>
+                            <tr style="background:rgba(124,58,237,0.15);">
+                                <th
+                                    style="padding:8px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
+                                    Usage Pattern</th>
+                                <th
+                                    style="padding:8px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">
+                                    Est. Monthly Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding:8px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
+                                    1–2 analyses/day (light use)</td>
+                                <td style="padding:8px 12px; color:#4ade80; border-bottom:1px solid var(--border)">~
+                                    <strong>$0.02</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 12px; color:var(--muted); border-bottom:1px solid var(--border)">
+                                    3 meals/day + AI reports (typical)</td>
+                                <td style="padding:8px 12px; color:#4ade80; border-bottom:1px solid var(--border)">~
+                                    <strong>$0.05–0.15</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 12px; color:var(--muted)">+ weekly &amp; monthly reports (heavy
+                                    use)</td>
+                                <td style="padding:8px 12px; color:#fbbf24">~ <strong>$0.20–0.50</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="color:var(--muted); font-size:0.78rem; margin-top:10px; opacity:0.7">※ Based on Gemini 2.5
+                        Flash-Lite pricing. Actual cost varies by model and usage.</p>
+                    <div
+                        style="margin-top:12px; padding:8px 14px; background:rgba(124,58,237,0.12); border-radius:8px; display:inline-flex; align-items:center; gap:8px;">
+                        <span
+                            style="background:var(--primary); color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:999px;">COMING
+                            SOON</span>
+                        <span style="color:var(--primary-light); font-size:0.82rem;"><strong>Premium model
+                                selection</strong> for paid API users &mdash; coming in a future update</span>
+                    </div>
                 </div>
             </div>
         </section>
