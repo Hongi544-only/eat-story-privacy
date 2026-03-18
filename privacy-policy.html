@@ -225,6 +225,7 @@
     <div class="lang-toggle">
         <button class="lang-btn active" onclick="setLang('ko')">한국어</button>
         <button class="lang-btn" onclick="setLang('en')">English</button>
+        <button class="lang-btn" onclick="setLang('ja')">日本語</button>
     </div>
 
     <!-- ==================== 한국어 ==================== -->
@@ -501,12 +502,140 @@
         <a href="index.html#api-guide" style="color:var(--primary);">🔑 API 가이드</a>
     </footer>
 
+    <!-- ==================== JAPANESE ==================== -->
+    <div id="ja" class="content">
+        <div class="container">
+            <div class="updated">最終更新日：2026年3月18日 · 施行日：2026年3月18日</div>
+
+            <section>
+                <h2>概要</h2>
+                <p>「Eat-Story」（以下「本アプリ」）は、個人開発者<strong>Wongi Hong</strong>が提供します。本方針は、本アプリ利用時に収集および処理する情報について案内します。本アプリのすべてのデータは<strong>ユーザーのデバイス内にのみ保存</strong>され、別途サーバーに送信したり保管したりすることはありません（後述するAIサービス利用時を除く）。</p>
+            </section>
+
+            <section>
+                <h2>収集する情報および利用目的</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>利用目的</th>
+                            <th>保存場所</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>食事記録（料理名、カロリーなど）</td>
+                            <td>食事管理およびAI分析</td>
+                            <td>デバイス内（暗号化）</td>
+                        </tr>
+                        <tr>
+                            <td>食事写真</td>
+                            <td>AI栄養分析、記録保管</td>
+                            <td>デバイス内（暗号化）</td>
+                        </tr>
+                        <tr>
+                            <td>体重記録</td>
+                            <td>体重管理および統計</td>
+                            <td>デバイス内</td>
+                        </tr>
+                        <tr>
+                            <td>水分摂取記録</td>
+                            <td>水分摂取管理</td>
+                            <td>デバイス内</td>
+                        </tr>
+                        <tr>
+                            <td>飲酒記録</td>
+                            <td>生活習慣管理</td>
+                            <td>デバイス内</td>
+                        </tr>
+                        <tr>
+                            <td>アプリ設定</td>
+                            <td>ユーザー体験の維持</td>
+                            <td>デバイス内</td>
+                        </tr>
+                        <tr>
+                            <td>AI APIキー（任意入力）</td>
+                            <td>外部AIサービス認証</td>
+                            <td>デバイス内（暗号化）</td>
+                        </tr>
+                        <tr>
+                            <td>身体情報（年齢、性別、身長、体重、目標体重）</td>
+                            <td>カロリー目標算出、個別のAI分析</td>
+                            <td>デバイス内（暗호화）</td>
+                        </tr>
+                        <tr>
+                            <td>健康目標および活動レベル</td>
+                            <td>個別のAIコーチング、推奨量計算</td>
+                            <td>デバイス内（暗号化）</td>
+                        </tr>
+                        <tr>
+                            <td>空腹記録（目標時間、達成済否）</td>
+                            <td>断食管理機能</td>
+                            <td>デバイス内（暗号化）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>外部AIサービスの利用（第三者へのデータ転送）</h2>
+                <p>本アプリは、食事分析およびストーリー生成のために、以下のAIサービスにデータを転送する場合があります。<strong>サービスはユーザーが直接選択し、APIキーを入力</strong>して利用するため、転送の有無はユーザーが制御します。</p>
+                <ul>
+                    <li><strong>Google Gemini API</strong> — 写真・テキスト分析 (<a href="https://policies.google.com/privacy" target="_blank">Google プライバシーポリシー</a>)</li>
+                    <li><strong>Anthropic Claude API</strong> (任意) — テキスト生成 (<a href="https://www.anthropic.com/privacy" target="_blank">Anthropic プライバシーポリシー</a>)</li>
+                    <li><strong>OpenAI API</strong> (任意) — テキスト生成 (<a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI プライバシーポリシー</a>)</li>
+                </ul>
+                <div class="highlight">⚠️ AIサービスに送信されたデータ（写真、テキスト）は、各サービスのプライバシーポリシーに従って処理されます。機密性の高い個人情報の含まれ方に注意してください。</div>
+            </section>
+
+            <section>
+                <h2>デバイス権限</h2>
+                <ul>
+                    <li><strong>カメラ：</strong>食事写真の撮影（オプション）</li>
+                    <li><strong>写真ライブラリ：</strong>食事写真の選択および保存（オプション）</li>
+                </ul>
+                <p>すべての権限はユーザーの同意がある場合にのみ要求され、拒否してもアプリの基本機能の利用は可能です。</p>
+            </section>
+
+            <section>
+                <h2>データの保持および削除</h2>
+                <p>すべてのデータは、ユーザーが直接削除するか、アプリをアンインストールするまでデバイスに保持されます。アプリ削除時、すべてのデータが共に削除されます。アプリ内の <strong>設定 > データ管理</strong> メニューからいつでもデータを初期化できます。</p>
+            </section>
+
+            <section>
+                <h2>未成年者の保護</h2>
+                <p>本アプリは14歳未満の子供を対象としておらず、意図的に子供の個人情報を収集することはありません。</p>
+            </section>
+
+            <section>
+                <h2>方針の変更</h2>
+                <p>本方針が変更される場合、アプリのアップデートまたは本ページを通じて案内します。重要な変更事項はアプリ内通知でお知らせします。</p>
+            </section>
+
+            <section>
+                <h2>お問い合わせ</h2>
+                <div class="contact-box">
+                    <p><strong>責任者：</strong> Wongi Hong</p>
+                    <p><strong>メール：</strong> <a href="mailto:Hongi544@outlook.com">Hongi544@outlook.com</a></p>
+                    <p style="margin-top:8px; font-size:0.85rem; opacity:0.9;">プライバシーに関するお問い合わせ、訂正、削除リクエストは、上記のメールアドレスまでご連絡ください。</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
     <script>
         function setLang(lang) {
             document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
             document.getElementById(lang).classList.add('active');
-            event.target.classList.add('active');
+            
+            // Find the clicked button and set active
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.textContent === (lang === 'ko' ? '한국어' : lang === 'en' ? 'English' : '日本語')) {
+                    btn.classList.add('active');
+                }
+            });
         }
     </script>
 </body>
