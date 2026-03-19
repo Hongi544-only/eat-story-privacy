@@ -306,17 +306,31 @@
 
             <section>
                 <h2>외부 AI 서비스 이용 (제3자 데이터 전송)</h2>
-                <p>앱은 식사 분석 및 스토리 생성을 위해 아래 AI 서비스에 데이터를 전송할 수 있습니다. <strong>서비스는 사용자가 직접 선택 및 API 키를 입력</strong>하며, 전송
-                    여부는 사용자가 통제합니다.</p>
+                <p>앱은 식사 분석, 건강 레포트 생성, 식단 기반 스토리 창작을 위해 아래 AI 서비스에 데이터를 전송할 수 있습니다.
+                    <strong>서비스는 사용자가 직접 선택 및 API 키를 입력</strong>하며, <strong>최초 분석 시도 시 앱 내에서 명시적인 동의를 받은 후에만</strong> 데이터가 전송됩니다.</p>
+
+                <h3 style="margin-top:16px; font-size:0.95rem; font-weight:700;">📡 데이터 수신 대상</h3>
                 <ul>
-                    <li><strong>Google Gemini API</strong> — 식사 사진 분석, 텍스트 생성 (<a
-                            href="https://policies.google.com/privacy" target="_blank">Google 개인정보처리방침</a>)</li>
-                    <li><strong>Anthropic Claude API</strong> (선택) — 텍스트 생성 (<a href="https://www.anthropic.com/privacy"
-                            target="_blank">Anthropic 개인정보처리방침</a>)</li>
-                    <li><strong>OpenAI API</strong> (선택) — 텍스트 생성 (<a href="https://openai.com/policies/privacy-policy"
-                            target="_blank">OpenAI 개인정보처리방침</a>)</li>
+                    <li><strong>Google Gemini API</strong> — 식사 사진 분석, 텍스트 생성 (<a href="https://policies.google.com/privacy" target="_blank">Google 개인정보처리방침</a>)</li>
+                    <li><strong>Anthropic Claude API</strong> (선택) — 텍스트 생성 (<a href="https://www.anthropic.com/privacy" target="_blank">Anthropic 개인정보처리방침</a>)</li>
+                    <li><strong>OpenAI API</strong> (선택) — 텍스트 생성 (<a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI 개인정보처리방침</a>)</li>
                 </ul>
-                <div class="highlight">⚠️ AI 서비스에 전송된 데이터(사진, 텍스트)는 해당 서비스의 개인정보 정책에 따라 처리됩니다. 민감한 개인정보의 포함 여부에 주의해 주세요.
+
+                <h3 style="margin-top:16px; font-size:0.95rem; font-weight:700;">📋 전송되는 데이터 항목</h3>
+                <ul>
+                    <li><strong>식사 데이터:</strong> 식사 사진, 식사 설명(텍스트), 날짜/시간, 식사량, 조리 방식, 추가 메모</li>
+                    <li><strong>프로필 정보:</strong> 닉네임, 직업, 나이, 성별, 키, 현재 체중, 목표 체중</li>
+                    <li><strong>건강 정보:</strong> 활동량, 건강 관심사, 건강검진 특이사항, 건강 목표</li>
+                    <li><strong>활동 데이터:</strong> 체중 변화 기록, 수분 섭취 기록, 금주 기록 (통계 분석용)</li>
+                </ul>
+
+                <h3 style="margin-top:16px; font-size:0.95rem; font-weight:700;">🎯 데이터 전송 목적</h3>
+                <p>개인 맞춤형 영양 분석, 건강 레포트 생성, 식단 기반 스토리(소설/시/일기) 창작에 활용됩니다.</p>
+
+                <div class="highlight">
+                    ⚠️ <strong>사전 동의 필수:</strong> AI 서비스에 데이터를 전송하기 전, 앱 내에서 전송되는 데이터 항목과 수신 대상을 명확히 안내하고 사용자의 명시적 동의를 받습니다. 동의하지 않으면 데이터가 전송되지 않습니다.<br/>
+                    ⚠️ AI 서비스에 전송된 데이터는 해당 서비스의 개인정보 정책에 따라 처리됩니다.<br/>
+                    ⚠️ 사용자는 <strong>설정 > 고급 데이터 관리</strong>에서 언제든지 동의를 철회할 수 있습니다.
                 </div>
             </section>
 
@@ -437,21 +451,32 @@
 
             <section>
                 <h2>Third-Party AI Services</h2>
-                <p>The App may transmit data to the following AI services for meal analysis and story generation.
-                    <strong>This requires a user-provided API key</strong> and is entirely under the user's control.
-                </p>
+                <p>The App may transmit data to the following AI services for meal analysis, health report generation, and meal-based creative story writing.
+                    <strong>This requires a user-provided API key</strong> and <strong>explicit user consent is obtained within the app before any data is transmitted</strong>.</p>
+
+                <h3 style="margin-top:16px; font-size:0.95rem; font-weight:700;">📡 Data Recipients</h3>
                 <ul>
-                    <li><strong>Google Gemini API</strong> — Photo &amp; text analysis (<a
-                            href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>)</li>
-                    <li><strong>Anthropic Claude API</strong> (optional) — Text generation (<a
-                            href="https://www.anthropic.com/privacy" target="_blank">Anthropic Privacy Policy</a>)</li>
-                    <li><strong>OpenAI API</strong> (optional) — Text generation (<a
-                            href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI Privacy Policy</a>)
-                    </li>
+                    <li><strong>Google Gemini API</strong> — Photo &amp; text analysis (<a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>)</li>
+                    <li><strong>Anthropic Claude API</strong> (optional) — Text generation (<a href="https://www.anthropic.com/privacy" target="_blank">Anthropic Privacy Policy</a>)</li>
+                    <li><strong>OpenAI API</strong> (optional) — Text generation (<a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI Privacy Policy</a>)</li>
                 </ul>
-                <div class="highlight">⚠️ Data (photos, text) sent to AI services is subject to those services' own
-                    privacy policies. Please be mindful of sensitive personal information included in your meal photos
-                    or notes.</div>
+
+                <h3 style="margin-top:16px; font-size:0.95rem; font-weight:700;">📋 Data Being Shared</h3>
+                <ul>
+                    <li><strong>Meal data:</strong> Meal photos, meal description (text), date/time, portion size, cooking method, additional notes</li>
+                    <li><strong>Profile information:</strong> Nickname, occupation, age, gender, height, current weight, target weight</li>
+                    <li><strong>Health information:</strong> Activity level, health interests, health checkup notes, health goals</li>
+                    <li><strong>Activity data:</strong> Weight change history, water intake records, alcohol abstinence records (for statistical analysis)</li>
+                </ul>
+
+                <h3 style="margin-top:16px; font-size:0.95rem; font-weight:700;">🎯 Purpose of Data Use</h3>
+                <p>Used for personalized nutrition analysis, health report generation, and meal-based creative story writing (novels, poems, diaries).</p>
+
+                <div class="highlight">
+                    ⚠️ <strong>Prior Consent Required:</strong> Before transmitting any data to AI services, the app clearly discloses what data is shared and who receives it, and obtains explicit user consent. No data is transmitted without consent.<br/>
+                    ⚠️ Data sent to AI services is subject to those services' own privacy policies.<br/>
+                    ⚠️ Users can revoke consent at any time in <strong>Settings &gt; Advanced Data Management</strong>.
+                </div>
             </section>
 
             <section>
@@ -579,13 +604,32 @@
 
             <section>
                 <h2>外部AIサービスの利用（第三者へのデータ転送）</h2>
-                <p>本アプリは、食事分析およびストーリー生成のために、以下のAIサービスにデータを転送する場合があります。<strong>サービスはユーザーが直接選択し、APIキーを入力</strong>して利用するため、転送の有無はユーザーが制御します。</p>
+                <p>本アプリは、食事分析、健康レポートの生成、食事をテーマにしたストーリー創作のために、以下のAIサービスにデータを転送する場合があります。
+                    <strong>サービスはユーザーが直接選択し、APIキーを入力</strong>して利用するため、<strong>最初の分析試行時にアプリ内で明示的な同意を得た後にのみ</strong>データが送信されます。</p>
+
+                <h3 style="margin-top:16px; font-size:0.95rem; font-weight:700;">📡 データの送信先</h3>
                 <ul>
                     <li><strong>Google Gemini API</strong> — 写真・テキスト分析 (<a href="https://policies.google.com/privacy" target="_blank">Google プライバシーポリシー</a>)</li>
                     <li><strong>Anthropic Claude API</strong> (任意) — テキスト生成 (<a href="https://www.anthropic.com/privacy" target="_blank">Anthropic プライバシーポリシー</a>)</li>
                     <li><strong>OpenAI API</strong> (任意) — テキスト生成 (<a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI プライバシーポリシー</a>)</li>
                 </ul>
-                <div class="highlight">⚠️ AIサービスに送信されたデータ（写真、テキスト）は、各サービスのプライバシーポリシーに従って処理されます。機密性の高い個人情報の含まれ方に注意してください。</div>
+
+                <h3 style="margin-top:16px; font-size:0.95rem; font-weight:700;">📋 送信されるデータ項目</h3>
+                <ul>
+                    <li><strong>食事データ:</strong> 食事の写真、食事の説明（テキスト）、日時、食事量、調理方法、追加メモ</li>
+                    <li><strong>プロフィール情報:</strong> ニックネーム、職業、年齢、性別、身長、現在の体重、目標体重</li>
+                    <li><strong>健康情報:</strong> 活動量、健康関心事、健康診断特記事項、健康目標</li>
+                    <li><strong>活動データ:</strong> 体重変化記録、水分摂取記録、禁酒記録（統計分析用）</li>
+                </ul>
+
+                <h3 style="margin-top:16px; font-size:0.95rem; font-weight:700;">🎯 データの使用目的</h3>
+                <p>パーソナライズされた栄養分析、健康レポートの生成、食事をテーマにしたストーリー創作（小説・詩・日記）に活用されます。</p>
+
+                <div class="highlight">
+                    ⚠️ <strong>事前同意が必要：</strong>AIサービスにデータを送信する前に、アプリ内で送信されるデータ項目と受信先を明確に案内し、ユーザーの明示的な同意を得ます。同意しない場合、データは送信されません。<br/>
+                    ⚠️ AIサービスに送信されたデータは、各サービスのプライバシーポリシーに従って処理されます。<br/>
+                    ⚠️ ユーザーは<strong>設定 > 高度なデータ管理</strong>からいつでも同意を撤回できます。
+                </div>
             </section>
 
             <section>
