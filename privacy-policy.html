@@ -228,6 +228,8 @@
         <button class="lang-btn" onclick="setLang('ja')">日本語</button>
         <button class="lang-btn" onclick="setLang('de')">Deutsch</button>
         <button class="lang-btn" onclick="setLang('fr')">Français</button>
+        <button class="lang-btn" onclick="setLang('es')">Español</button>
+        <button class="lang-btn" onclick="setLang('pt')">Português</button>
     </div>
 
     <!-- ==================== 한국어 ==================== -->
@@ -739,13 +741,11 @@
     </div>
 
 
-<!-- ==================== FRANÇAIS ==================== -->
+    <!-- ==================== FRANÇAIS ==================== -->
     <div id="fr" class="content">
-        <div class="content-header">
-            <h1 class="page-title">Politique de Confidentialité</h1>
-            <p class="last-updated">Dernière mise à jour : 20 Mars 2026</p>
-        </div>
-        <div class="policy-body">
+        <div class="container">
+            <div class="updated">Dernière mise à jour : 20 Mars 2026 · Date d'entrée en vigueur : 20 Mars 2026</div>
+
             <section>
                 <h2>Introduction</h2>
                 <p>Eat-Story ("L'Application") respecte votre vie privée et traite vos données selon le principe de <strong>stockage 100% sur l'appareil</strong>. L'Application ne collecte pas vos informations personnelles sur des serveurs, et tous les historiques de repas restent entièrement sur votre appareil mobile.</p>
@@ -753,33 +753,26 @@
 
             <section>
                 <h2>Collecte et utilisation des données</h2>
-                <ul>
-                    <li><strong>Données des repas et photos :</strong> Les macros, les photos de repas, la croissance du personnage Nyam-i (Nyam-i) sont stockés uniquement de manière locale via un stockage chiffré.</li>
-                    <li><strong>Suivi de la santé :</strong> Poids, hydratation, temps de jeûne, etc., sont stockés localement sur votre appareil.</li>
-                    <li>L'Application ne vend aucune de vos données personnelles sensibles à des annonceurs publicitaires.</li>
-                </ul>
+                <table>
+                    <thead>
+                        <tr><th>Donnée</th><th>Objectif</th><th>Stockage</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Historique des repas</td><td>Gestion et analyse par IA</td><td>No dispositivo (chiffré)</td></tr>
+                        <tr><td>Photos des repas</td><td>Analyse nutritionnelle IA</td><td>No dispositivo (chiffré)</td></tr>
+                        <tr><td>Poids, Eau, Alcool</td><td>Statistiques de santé</td><td>No dispositivo</td></tr>
+                        <tr><td>Clés API IA (facultatif)</td><td>Authentification services externes</td><td>No dispositivo (chiffré)</td></tr>
+                    </tbody>
+                </table>
             </section>
 
             <section>
                 <h2>Analyse par IA & Traitement par Clé API (BYOK)</h2>
                 <p>Cette application analyse les repas moyennant l'utilisation <strong>de vos propres Clés API</strong> (Bring Your Own Key).</p>
-                <ul>
-                    <li><strong>Google Gemini (par défaut) :</strong> La clé API que vous saisissez est chiffrée de manière sécurisée sur votre appareil. Les photos de repas ne sont envoyées à l'API officielle Google que pour être analysées.</li>
-                    <li><strong>OpenAI / Claude :</strong> Si l'utilisateur choisit d'enregistrer ses clés pour GPT-4o ou Claude, ces clés restent également conservées sur le téléphone avec une protection complète pour l'usage unique de cette application.</li>
-                </ul>
-                <div class="highlight-box">
+                <div class="highlight">
                     ⚠️ Les données soumises à l'analyse par l'IA obéissent aux politiques de confidentialité de ces fournisseurs.<br/>
                     ⚠️ Vous pouvez toujours résilier l'approbation via <strong>Paramètres > Gestion des données</strong>.
                 </div>
-            </section>
-
-            <section>
-                <h2>Autorisations de l'appareil</h2>
-                <ul>
-                    <li><strong>Appareil photo :</strong> Prise de photos de repas (facultatif)</li>
-                    <li><strong>Bibliothèque de photos :</strong> Sauvegarde et sélection de photos (facultatif)</li>
-                </ul>
-                <p>Toutes les autorisations ne sont exigées qu'après approbation, et vous pouvez toujours utiliser les caractéristiques de base de l'Application sans accorder les autorisations.</p>
             </section>
 
             <section>
@@ -788,21 +781,129 @@
             </section>
 
             <section>
-                <h2>Protection des mineurs</h2>
-                <p>Notre Plateforme ne cible pas les enfants âgés de moins de 14 ans, et nous ne récoltons pas sciemment de données auprès d'eux.</p>
-            </section>
-
-            <section>
-                <h2>Amendements de la Politique de Confidentialité</h2>
-                <p>Toute modification de la politique sera communiquée par une mise à jour ou sur cette page Web. Les altérations majeures pourraient être notifiées par une notification au sein de l'Application.</p>
-            </section>
-
-            <section>
                 <h2>Contact</h2>
                 <div class="contact-box">
                     <p><strong>Responsable :</strong> Wongi Hong</p>
                     <p><strong>Email :</strong> <a href="mailto:Hongi544@outlook.com">Hongi544@outlook.com</a></p>
-                    <p style="margin-top:8px; font-size:0.85rem; opacity:0.9;">Pour des requêtes de suppression, questions sur la vie privée, contactez-nous à l'adresse ci-dessus.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ==================== ESPAÑOL ==================== -->
+    <div id="es" class="content">
+        <div class="container">
+            <div class="updated">Última actualización: 20 de marzo de 2026 · Fecha de vigencia: 20 de marzo de 2026</div>
+
+            <section>
+                <h2>Resumen</h2>
+                <p>'Eat-Story' (la "App") es proporcionada por el desarrollador individual <strong>Wongi Hong</strong>. Esta política describe cómo la App maneja tu información. Todos los datos se almacenan <strong>solo en tu dispositivo</strong> y nunca se transmiten a servidores externos (excepto para los servicios de IA indicados abajo).</p>
+            </section>
+
+            <section>
+                <h2>Información que recolectamos</h2>
+                <table>
+                    <thead>
+                        <tr><th>Dato</th><th>Propósito</th><th>Almacenamiento</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Registros de comida (Nombre, calorías, etc.)</td><td>Seguimiento y análisis IA</td><td>Local (cifrado)</td></tr>
+                        <tr><td>Fotos de comida</td><td>Análisis nutricional IA</td><td>Local (cifrado)</td></tr>
+                        <tr><td>Peso, Agua, Alcohol</td><td>Estadísticas de salud</td><td>Local</td></tr>
+                        <tr><td>Llaves API AI (opcional)</td><td>Autenticación con servicios externos</td><td>Local (cifrado)</td></tr>
+                        <tr><td>Perfil (Edad, sexo, altura, peso)</td><td>Cálculo de metas y análisis IA</td><td>Local (cifrado)</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Servicios de IA de Terceros</h2>
+                <p>La App puede transmitir datos a servicios de IA para análisis de comidas y reportes de salud. **Requiere una llave API proporcionada por el usuario** y **consentimiento explícito dentro de la app**.</p>
+                <ul>
+                    <li><strong>Google Gemini API</strong> — Análisis de fotos y texto</li>
+                    <li><strong>Anthropic Claude API</strong> (opcional) — Generación de texto</li>
+                    <li><strong>OpenAI API</strong> (opcional) — Generación de texto</li>
+                </ul>
+                <div class="highlight">
+                    ⚠️ <strong>Consentimiento obligatorio:</strong> Antes de enviar datos a la IA, la app solicita tu permiso explícito.<br/>
+                    ⚠️ Los datos enviados están sujetos a las políticas de privacidad de cada proveedor.<br/>
+                    ⚠️ Puedes revocar el consentimiento en **Ajustes > Gestión avanzada de datos**.
+                </div>
+            </section>
+
+            <section>
+                <h2>Permisos del Dispositivo</h2>
+                <ul>
+                    <li><strong>Cámara y Fotos:</strong> Para capturar o elegir fotos de tus comidas (opcional).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Retención y Eliminación de Datos</h2>
+                <p>Todos los datos permanecen en tu dispositivo hasta que los borres o desinstales la App. Desinstalar la App borra todos los datos. Puedes resetear todo en <strong>Ajustes > Gestión de datos</strong>.</p>
+            </section>
+
+            <section>
+                <h2>Contacto</h2>
+                <div class="contact-box">
+                    <p><strong>Responsable:</strong> Wongi Hong</p>
+                    <p><strong>Email:</strong> <a href="mailto:Hongi544@outlook.com">Hongi544@outlook.com</a></p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ==================== PORTUGUÊS ==================== -->
+    <div id="pt" class="content">
+        <div class="container">
+            <div class="updated">Última atualização: 20 de março de 2026 · Data de vigência: 20 de março de 2026</div>
+
+            <section>
+                <h2>Visão Geral</h2>
+                <p>O 'Eat-Story' (o "App") é fornecido pelo desenvolvedor individual <strong>Wongi Hong</strong>. Esta política descreve como o App lida com suas informações. Todos os dados são armazenados <strong>apenas localmente no seu dispositivo</strong> e nunca são transmitidos para servidores externos (exceto para os serviços de IA abaixo).</p>
+            </section>
+
+            <section>
+                <h2>Informações Coletadas e Finalidade</h2>
+                <table>
+                    <thead>
+                        <tr><th>Dado</th><th>Finalidade</th><th>Armazenamento</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Registros de refeição (Nome, calorias, etc.)</td><td>Gestão e análise por IA</td><td>No dispositivo (criptografado)</td></tr>
+                        <tr><td>Fotos de comida</td><td>Análise nutricional IA</td><td>No dispositivo (criptografado)</td></tr>
+                        <tr><td>Peso, Água, Álcool</td><td>Estatísticas de saúde</td><td>No dispositivo</td></tr>
+                        <tr><td>Chaves API IA (opcional)</td><td>Autenticação com serviços externos</td><td>No dispositivo (criptografado)</td></tr>
+                        <tr><td>Perfil (Idade, sexo, altura, peso)</td><td>Cálculo de metas e análise personalizada</td><td>No dispositivo (criptografado)</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Serviços de IA de Terceiros</h2>
+                <p>O App pode transmitir dados para serviços de IA para análise nutricional e geração de relatórios. **Isso requer uma chave API do usuário** e **consentimento explícito dentro do app**.</p>
+                <ul>
+                    <li><strong>Google Gemini API</strong> — Análise de fotos e texto</li>
+                    <li><strong>Anthropic Claude API</strong> (opcional) — Geração de texto</li>
+                    <li><strong>OpenAI API</strong> (opcional) — Geração de texto</li>
+                </ul>
+                <div class="highlight">
+                    ⚠️ <strong>Consentimento Prévio:</strong> Antes de enviar dados, o app solicita permissão explícita do usuário.<br/>
+                    ⚠️ Os dados enviados estão sujeitos às políticas de privacidade de cada fornecedor.<br/>
+                    ⚠️ Você pode revogar o consentimento em **Ajustes > Gestão de Dados**.
+                </div>
+            </section>
+
+            <section>
+                <h2>Retenção e Exclusão de Dados</h2>
+                <p>Todos os dados ficam no seu dispositivo até que você os apague ou desinstale o App. Desinstalar o App remove todos os dados. Você pode resetar tudo em <strong>Ajustes > Gestão de Dados</strong>.</p>
+            </section>
+
+            <section>
+                <h2>Contato</h2>
+                <div class="contact-box">
+                    <p><strong>Responsável:</strong> Wongi Hong</p>
+                    <p><strong>Email:</strong> <a href="mailto:Hongi544@outlook.com">Hongi544@outlook.com</a></p>
                 </div>
             </section>
         </div>
@@ -815,11 +916,13 @@
             document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
             document.getElementById(lang).classList.add('active');
             
-            // Find the clicked button and set active
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => {
-                const label = lang === 'ko' ? '한국어' : lang === 'en' ? 'English' : lang === 'ja' ? '日本語' : lang === 'de' ? 'Deutsch' : 'Français';
-                if (btn.textContent === label) {
+                const labelMap = {
+                    'ko': '한국어', 'en': 'English', 'ja': '日本語', 
+                    'de': 'Deutsch', 'fr': 'Français', 'es': 'Español', 'pt': 'Português'
+                };
+                if (btn.textContent === labelMap[lang]) {
                     btn.classList.add('active');
                 }
             });
