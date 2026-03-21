@@ -481,6 +481,8 @@
                 <button class="lang-btn active" onclick="setLang('ko')">한국어</button>
                 <button class="lang-btn" onclick="setLang('en')">English</button>
                 <button class="lang-btn" onclick="setLang('ja')">日本語</button>
+                <button class="lang-btn" onclick="setLang('de')">Deutsch</button>
+                <button class="lang-btn" onclick="setLang('fr')">Français</button>
             </div>
         </div>
     </nav>
@@ -1356,6 +1358,484 @@
         </footer>
     </div>
 
+<!-- ==================== DEUTSCH ==================== -->
+<div id="de" class="content">
+
+    <section class="hero">
+        <span class="hero-emoji">🍽️</span>
+        <div class="badge">AI Gesundheits-App</div>
+        <h1>Essen, knipsen, aufzeichnen<br /><span>Jede Mahlzeit eine Story</span></h1>
+        <p><strong>Ohne zusätzliche Zahlungen oder Abos:</strong> Analysieren Sie Ihre Ernährung mit einem Foto<br />und lassen Sie die KI eine einzigartige Geschichte darüber schreiben.<br />Alle Daten werden sicher <strong>nur auf Ihrem Gerät</strong> gespeichert.</p>
+        <div class="hero-buttons">
+            <a href="https://apps.apple.com/us/app/eat-story-ai-meal-diary/id6760125131" target="_blank" class="btn-primary">🍎 App Store Download</a>
+            <a href="#" class="btn-outline">🤖 Google Play Download</a>
+        </div>
+    </section>
+
+    <section id="features-de">
+        <div class="section-inner">
+            <div class="section-title">✨ Haupt<span>funktionen</span></div>
+            <p class="section-desc">Beginnen Sie eine gesündere und besondere Ernährungsreise mit Eat-Story.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>KI Ernährungsanalyse</h3>
+                    <p>Ein Foto genügt, und die KI analysiert sofort Kalorien, Kohlenhydrate, Eiweiß, Fett und Natrium.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Ihre eigene Eat-Story</h3>
+                    <p>Ihre täglichen Mahlzeiten werden zu Tagebüchern, Romanen oder Gedichten. Mit monatlich wechselnden Roman-Genres.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Komplette Privatsphäre</h3>
+                    <p>Alle Ernährungsdaten, Fotos und privaten Infos werden ohne Server verschlüsselt nur auf dem Gerät gespeichert.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Nyam-i Charakter-Entwicklung</h3>
+                    <p>Sammeln Sie Einträge, um 'Nyam-i' wachsen zu lassen. 20 Evolutionsstufen vom Samen bis zum Weltenbaum warten auf Sie! (Premium 3D-Charakter für Stufe 1-13)</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏅</div>
+                    <h3>Abzeichen & Erfolgssystem</h3>
+                    <p>Sammeln Sie Abzeichen in 12 Kategorien (z. B. 'Flamme der Aufzeichnung', 'Natriumjäger') und verbessern Sie so Ihren Gesundheitsrang mit Spaß.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>KI Ernährungsbericht</h3>
+                    <p>Erstellen Sie personalisierte Ernährungsberichte basierend auf Ihren täglichen, wöchentlichen und monatlichen Daten.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Gesundheits-Tracker</h3>
+                    <p>Verfolgen Sie Gewicht, Wasseraufnahme, Fastenzeiten und alkoholfreie Tage auf einen Blick im Homescreen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Smart AI Routing</h3>
+                    <p>Wählt automatisch das beste KI-System zwischen Gemini, OpenAI und Claude für maximale Geschwindigkeit und Stabilität aus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="api-section" id="api-guide-de">
+        <div class="section-inner">
+            <div class="section-title">🔑 API Key <span>Anleitung</span></div>
+            <p class="section-desc">Eat-Story verwendet API-Schlüssel, die Sie selbst erstellen. Deshalb werden keine persönlichen Daten von uns gesammelt.</p>
+
+            <div class="why-box">
+                <h3>💡 Warum brauche ich einen API Code? (BYOK)</h3>
+                <p>Eat-Story verlangt keine teuren Abonnements. Stattdessen können Sie <strong>kostenlos</strong> die KI mit Ihrem eigenen Google Gemini API-Key (Bring Your Own Key) nutzen. Auf diese Weise bleiben Ihre Daten sicher auf dem Gerät – eine <strong>perfekte Privatsphäre</strong> ohne versteckte Gebühren.</p>
+            </div>
+
+            <h3 style="margin-bottom:16px; font-size:1.1rem;">📋 Unterstützte KI-Dienste</h3>
+            <table class="ai-table">
+                <thead>
+                    <tr>
+                        <th>KI-Dienst</th>
+                        <th>Details</th>
+                        <th>Kostenlos?</th>
+                        <th>Empfehlung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Google Gemini</strong></td>
+                        <td>Sofortige Ausstellung mit Google-Account, optimal für Bilder</td>
+                        <td><span class="badge-free">Möglich</span></td>
+                        <td><span class="badge-rec">⭐ Empfohlen</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>OpenAI (GPT-4o)</strong></td>
+                        <td>Hochleistungs-Texterstellung, kostenpflichtig</td>
+                        <td>Nein</td>
+                        <td>Optional</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Anthropic (Claude)</strong></td>
+                        <td>Haiku-Modell, intelligente Analyse</td>
+                        <td>Nein</td>
+                        <td>Optional</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="background:rgba(124,58,237,0.06); border:1px solid var(--border); border-radius:14px; padding:20px 24px; margin-bottom:32px;">
+                <h4 style="color:var(--primary-light); margin-bottom:4px; font-size:1rem;">💰 Kostensimulation pro Monat (Reales Nutzungsszenario)</h4>
+                <p style="color:var(--muted); font-size:0.82rem; margin-bottom:14px;">Basierend auf: 4 Mahlzeiten/Tag · 2 Tagesberichte · 8 Wochenberichte · 2 Monatsberichte · 2 Stories/Tag = ca. 250 Abfragen/Monat</p>
+                <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse:collapse; font-size:0.85rem; min-width:400px;">
+                        <thead>
+                            <tr style="background:rgba(124,58,237,0.15);">
+                                <th style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">KI-Dienst</th>
+                                <th style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">Modell</th>
+                                <th style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">Geschätzte Kosten/Monat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">🔵 Google Gemini</td>
+                                <td style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">2.5 Flash-Lite <span style="font-size:0.75rem; color:#4ade80;">★ Günstigstes</span></td>
+                                <td style="padding:9px 12px; color:#4ade80; border-bottom:1px solid var(--border); font-weight:700">ca. <strong>$0.17</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">🔵 Google Gemini</td>
+                                <td style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">2.5 Flash (Standard)</td>
+                                <td style="padding:9px 12px; color:#fbbf24; border-bottom:1px solid var(--border); font-weight:700">ca. <strong>$0.74</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">🟠 Anthropic Claude</td>
+                                <td style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">Haiku 4.5 <span style="font-size:0.75rem; color:#a89cc8;">Unterstützt</span></td>
+                                <td style="padding:9px 12px; color:#fbbf24; border-bottom:1px solid var(--border); font-weight:700">ca. <strong>$1.47</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding:9px 12px; color:var(--text); font-weight:600">🟢 OpenAI ChatGPT</td>
+                                <td style="padding:9px 12px; color:var(--muted)">GPT-4o <span style="font-size:0.75rem; color:#a89cc8;">Unterstützt</span></td>
+                                <td style="padding:9px 12px; color:#f87171; font-weight:700">ca. <strong>$4.05</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="color:var(--muted); font-size:0.78rem; margin-top:10px; opacity:0.7">※ Geschätzt basierend auf ~920k Input-Tokens (inkl. Bild-Tokens) + ~184k Output-Tokens. Die tatsächlichen Kosten können je nach Nutzung variieren.</p>
+            </div>
+
+            <h3 style="margin-bottom:16px; font-size:1.1rem;">📱 Google Gemini API Key — 9 Schritte</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <h4>Gehen Sie zu Google AI Studio</h4>
+                        <p>Besuchen Sie <a href="https://aistudio.google.com" target="_blank" style="color:var(--primary-light)">aistudio.google.com</a> und loggen Sie sich ein. Klicken Sie auf das ☰-Menü oben links.</p>
+                        <div class="step-tip">💡 Ein Google-Konto wird benötigt.</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <h4>Wählen Sie "Get API key"</h4>
+                        <p>Tippen Sie in der Seitenleiste auf "Get API key".</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <h4>API-Key erstellen</h4>
+                        <p>Klicken Sie oben rechts auf "Create API key".</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                        <h4>Name eingeben</h4>
+                        <p>Geben Sie z. B. "eatstory" ein und bestätigen Sie.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">5</div>
+                    <div class="step-body">
+                        <h4>Bestätigen</h4>
+                        <p>Der Schlüssel ist erstellt! Tippen Sie darauf, um ihn zu sehen.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">6</div>
+                    <div class="step-body">
+                        <h4>Key kopieren</h4>
+                        <p>Kopieren Sie den Schlüssel 📋.</p>
+                        <div class="step-tip">⚠️ Behandeln Sie den Key wie ein Passwort!</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">7</div>
+                    <div class="step-body">
+                        <h4>Eat-Story öffnen</h4>
+                        <p>Gehen Sie in der Eat-Story App auf "Einstellungen".</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">8</div>
+                    <div class="step-body">
+                        <h4>"Funktionen" Tabs öffnen</h4>
+                        <p>Wählen Sie den Tab "Funktionseinstellungen".</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">9</div>
+                    <div class="step-body">
+                        <h4>Key einfügen & speichern</h4>
+                        <p>Fügen Sie den Key bei "Google Gemini" ein und tippen Sie auf "Speichern".</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box" style="margin-top:32px;">
+                <h4>⚠️ Einschränkungen für kostenlose APIs</h4>
+                <p>Geminis kostenloses Kontingent ist <strong>pro Projekt</strong> begrenzt.</p>
+                <ul style="margin-top:10px;">
+                    <li>Ca. <strong>20–50 Anfragen pro Tag und Modell</strong> (je nach Google-Richtlinien)</li>
+                    <li>Das Überschreiten kann zu Fehlern oder Verzögerungen führen</li>
+                </ul>
+            </div>
+
+            <div class="smart-routing-box">
+                <h4>✅ Limits durch Smart Routing überwinden</h4>
+                <p>Eat-Story <strong>wechselt automatisch zwischen 3 Gemini Modellen (1.5 / 2.5 / 2.5 Lite)</strong> und vergrößert so das Limit auf ca. <strong>60–150 Anfragen/Tag</strong>. Fügen Sie ggf. OpenAI- oder Claude-Schlüssel hinzu.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Wongi Hong · 잇-Story / Eat-Story</p>
+        <p style="margin-top:8px;">
+            <a href="privacy-policy.html">Datenschutzrichtlinie</a> &nbsp;|&nbsp;
+            <a href="mailto:Hongi544@outlook.com">Kontakt: Hongi544@outlook.com</a>
+        </p>
+    </footer>
+</div>
+
+
+<!-- ==================== FRANÇAIS ==================== -->
+<div id="fr" class="content">
+
+    <section class="hero">
+        <span class="hero-emoji">🍽️</span>
+        <div class="badge">Appli Santé IA</div>
+        <h1>Mangez, photographiez, enregistrez<br /><span>Chaque repas, une histoire</span></h1>
+        <p><strong>Sans paiement ni abonnement:</strong> Analysez votre alimentation avec une seule photo<br />et laissez l'IA écrire une histoire unique sur votre repas.<br />Toutes vos données sont stockées en toute sécurité <strong>uniquement sur votre appareil</strong>.</p>
+        <div class="hero-buttons">
+            <a href="https://apps.apple.com/us/app/eat-story-ai-meal-diary/id6760125131" target="_blank" class="btn-primary">🍎 Télécharger sur l'App Store</a>
+            <a href="#" class="btn-outline">🤖 Télécharger sur Google Play</a>
+        </div>
+    </section>
+
+    <section id="features-fr">
+        <div class="section-inner">
+            <div class="section-title">✨ Fonctionnalités <span>Principales</span></div>
+            <p class="section-desc">Commencez une journée plus saine et plus spéciale avec Eat-Story.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>Analyse de Repas IA</h3>
+                    <p>Prenez une photo de votre plat, et l'IA analyse instantanément les calories, les glucides, les protéines, les graisses et le sodium.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Votre propre Eat-Story</h3>
+                    <p>Vos repas quotidiens se transforment en journaux, en romans ou en poèmes. Des genres variés chaque mois.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Confidentialité Totale</h3>
+                    <p>Toutes vos données de régime, vos photos et vos informations personnelles sont cryptées et stockées uniquement sur votre téléphone (pas de serveur).</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Développement du personnage Nyam-i</h3>
+                    <p>Collectionnez des repas pour faire grandir « Nyam-i ». 20 étapes d'évolution vous attendent ! (Personnage 3D premium niveaux 1-13)</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏅</div>
+                    <h3>Système de Badges & Réussites</h3>
+                    <p>Collectionnez des badges dans 12 catégories (ex: Flamme des enregistrements, Chasseur de sodium) pour booster votre rang de santé en vous amusant.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Rapport de Nutrition IA</h3>
+                    <p>Créez des rapports d'analyse de nutrition personnalisés basés sur vos données alimentaires quotidiennes, hebdomadaires et mensuelles.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Suivi de Santé</h3>
+                    <p>Suivez votre poids, votre consommation d'eau, vos heures de jeûne ou d'abstinence en un coup d'œil depuis l'écran d'accueil.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Routage IA Intelligent (Smart Routing)</h3>
+                    <p>Bascule automatiquement vers la meilleure IA parmi Gemini, OpenAI et Claude pour maximiser la vitesse et la stabilité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="api-section" id="api-guide-fr">
+        <div class="section-inner">
+            <div class="section-title">🔑 Guide de création <span>Clé API</span></div>
+            <p class="section-desc">Eat-Story utilise les clés API que vous générez vous-même. C'est pourquoi nous ne collectons pas vos données personnelles.</p>
+
+            <div class="why-box">
+                <h3>💡 Pourquoi ai-je besoin d'une Clé API ? (BYOK)</h3>
+                <p>Eat-Story ne vous fait pas payer d'abonnements coûteux. Vous pouvez utiliser l'IA <strong>sans frais supplémentaires</strong> en incluant votre propre clé Google Gemini (Bring Your Own Key). Ainsi, vos données restent en sécurité sur votre appareil, offrant une <strong>privacy parfaite</strong> sans frais cachés.</p>
+            </div>
+
+            <h3 style="margin-bottom:16px; font-size:1.1rem;">📋 Services d'IA pris en charge</h3>
+            <table class="ai-table">
+                <thead>
+                    <tr>
+                        <th>Service d'IA</th>
+                        <th>Détails</th>
+                        <th>Gratuit ?</th>
+                        <th>Recommandation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Google Gemini</strong></td>
+                        <td>Création instantanée avec un compte Google, idéal pour les photos</td>
+                        <td><span class="badge-free">Possible</span></td>
+                        <td><span class="badge-rec">⭐ Recommandé</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>OpenAI (GPT-4o)</strong></td>
+                        <td>Très performant pour le texte, payant</td>
+                        <td>Non</td>
+                        <td>Optionnel</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Anthropic (Claude)</strong></td>
+                        <td>Modèle Haiku, analyse intelligente</td>
+                        <td>Non</td>
+                        <td>Optionnel</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="background:rgba(124,58,237,0.06); border:1px solid var(--border); border-radius:14px; padding:20px 24px; margin-bottom:32px;">
+                <h4 style="color:var(--primary-light); margin-bottom:4px; font-size:1rem;">💰 Simulation des coûts mensuels</h4>
+                <p style="color:var(--muted); font-size:0.82rem; margin-bottom:14px;">Basé sur : 4 repas/jour · 2 rapports journaliers · 8 rapports hebdos · 2 rapports mensuels · 2 stories/jour = env. 250 requêtes/mois</p>
+                <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse:collapse; font-size:0.85rem; min-width:400px;">
+                        <thead>
+                            <tr style="background:rgba(124,58,237,0.15);">
+                                <th style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">Service d'IA</th>
+                                <th style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">Modèle</th>
+                                <th style="padding:9px 12px; text-align:left; color:var(--primary-light); border-bottom:1px solid var(--border)">Coût estimé / mois</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">🔵 Google Gemini</td>
+                                <td style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">2.5 Flash-Lite <span style="font-size:0.75rem; color:#4ade80;">★ Le moins cher</span></td>
+                                <td style="padding:9px 12px; color:#4ade80; border-bottom:1px solid var(--border); font-weight:700">~ <strong>$0.17</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">🔵 Google Gemini</td>
+                                <td style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">2.5 Flash (Standard)</td>
+                                <td style="padding:9px 12px; color:#fbbf24; border-bottom:1px solid var(--border); font-weight:700">~ <strong>$0.74</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding:9px 12px; color:var(--text); border-bottom:1px solid var(--border); font-weight:600">🟠 Anthropic Claude</td>
+                                <td style="padding:9px 12px; color:var(--muted); border-bottom:1px solid var(--border)">Haiku 4.5 <span style="font-size:0.75rem; color:#a89cc8;">Supporté</span></td>
+                                <td style="padding:9px 12px; color:#fbbf24; border-bottom:1px solid var(--border); font-weight:700">~ <strong>$1.47</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding:9px 12px; color:var(--text); font-weight:600">🟢 OpenAI ChatGPT</td>
+                                <td style="padding:9px 12px; color:var(--muted)">GPT-4o <span style="font-size:0.75rem; color:#a89cc8;">Supporté</span></td>
+                                <td style="padding:9px 12px; color:#f87171; font-weight:700">~ <strong>$4.05</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="color:var(--muted); font-size:0.78rem; margin-top:10px; opacity:0.7">※ Estimé sur ~920k jetons d'entrée (images incluses) + ~184k jetons de sortie. Le coût réel dépend de votre utilisation.</p>
+            </div>
+
+            <h3 style="margin-bottom:16px; font-size:1.1rem;">📱 Clé API Google Gemini — 9 Étapes</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <h4>Allez sur Google AI Studio</h4>
+                        <p>Visitez <a href="https://aistudio.google.com" target="_blank" style="color:var(--primary-light)">aistudio.google.com</a> et connectez-vous avec Google.</p>
+                        <div class="step-tip">💡 Un compte Google est requis.</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <h4>Sélectionnez "Get API key"</h4>
+                        <p>Appuyez sur "Get API key" dans la barre latérale.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <h4>Créer une clé</h4>
+                        <p>Appuyez sur le bouton "Create API key" en haut à droite.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                        <h4>Nommez-la</h4>
+                        <p>Entrez un nom (ex: "eatstory") et validez.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">5</div>
+                    <div class="step-body">
+                        <h4>Confirmation</h4>
+                        <p>Votre clé est créée ! Cliquez dessus pour la voir.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">6</div>
+                    <div class="step-body">
+                        <h4>Copiez la clé</h4>
+                        <p>Cliquez sur 📋 pour copier la clé.</p>
+                        <div class="step-tip">⚠️ Gardez-la secrète !</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">7</div>
+                    <div class="step-body">
+                        <h4>Ouvrez Eat-Story</h4>
+                        <p>Lancez l'app et allez dans "Paramètres".</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">8</div>
+                    <div class="step-body">
+                        <h4>Allez aux "Fonctionnalités"</h4>
+                        <p>Sélectionnez "Paramètres des fonctionnalités".</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">9</div>
+                    <div class="step-body">
+                        <h4>Collez & Enregistrez</h4>
+                        <p>Collez la clé dans Google Gemini et appuyez sur Sauvegarder.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box" style="margin-top:32px;">
+                <h4>⚠️ Limites de l'API gratuite</h4>
+                <p>La version gratuite de Gemini s'applique <strong>par projet</strong>.</p>
+                <ul style="margin-top:10px;">
+                    <li>Environ <strong>20–50 requêtes/jour/modèle</strong>.</li>
+                    <li>Un dépassement peut causer des erreurs.</li>
+                </ul>
+            </div>
+
+            <div class="smart-routing-box">
+                <h4>✅ Surmonter avec le Smart Routing</h4>
+                <p>Eat-Story <strong>alterne automatiquement entre 3 modèles Gemini (1.5 / 2.5 / 2.5 Lite)</strong> permettant ~<strong>60–150 requêtes/jour</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Wongi Hong · 잇-Story / Eat-Story</p>
+        <p style="margin-top:8px;">
+            <a href="privacy-policy.html">Politique de Confidentialité</a> &nbsp;|&nbsp;
+            <a href="mailto:Hongi544@outlook.com">Contact: Hongi544@outlook.com</a>
+        </p>
+    </footer>
+</div>
+
+
     <script>
         function setLang(lang) {
             document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
@@ -1365,7 +1845,8 @@
             // Find the clicked button and set active
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => {
-                if (btn.textContent === (lang === 'ko' ? '한국어' : lang === 'en' ? 'English' : '日本語')) {
+                const label = lang === 'ko' ? '한국어' : lang === 'en' ? 'English' : lang === 'ja' ? '日本語' : lang === 'de' ? 'Deutsch' : 'Français';
+                if (btn.textContent === label) {
                     btn.classList.add('active');
                 }
             });
@@ -1374,6 +1855,8 @@
             const isKo = lang === 'ko';
             const isEn = lang === 'en';
             const isJa = lang === 'ja';
+            const isDe = lang === 'de';
+            const isFr = lang === 'fr';
             
             if (isKo) {
                 document.getElementById('nav-features').textContent = '기능 소개';
@@ -1387,6 +1870,14 @@
                 document.getElementById('nav-features').textContent = '機能紹介';
                 document.getElementById('nav-guide').textContent = 'APIガイド';
                 document.getElementById('nav-privacy').textContent = 'プライバシーポリシー';
+            } else if (isDe) {
+                document.getElementById('nav-features').textContent = 'Funktionen';
+                document.getElementById('nav-guide').textContent = 'API-Anleitung';
+                document.getElementById('nav-privacy').textContent = 'Datenschutzrichtlinie';
+            } else if (isFr) {
+                document.getElementById('nav-features').textContent = 'Fonctionnalités';
+                document.getElementById('nav-guide').textContent = 'Guide API';
+                document.getElementById('nav-privacy').textContent = 'Politique de Confidentialité';
             }
         }
     </script>
